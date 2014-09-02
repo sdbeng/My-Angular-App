@@ -1,17 +1,17 @@
-<form class="form-inline" role="form">
+<form ng-submit="saveParty()" class="form-inline party-form" role="form">
   <div class="form-group">
     <label class="sr-only" for="partyName">Name</label>
-    <input type="text" class="form-control" id="partyName" placeholder="Enter Name">
+    <input ng-model="party.name" type="text" class="form-control" id="partyName" placeholder="Enter Name">
   </div>
   
   <div class="form-group">
     <label class="sr-only" for="phoneNumber">Phone number</label>
-    <input type="password" class="form-control" id="phoneNumber" placeholder="Enter Phone">
+    <input ng-model="party.phone" type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone">
   </div>
 
   <div class="form-group">
     <label class="sr-only" for="sizeOfParty">Size of party</label>
-    <input type="password" class="form-control" id="sizeOfParty" placeholder="Enter size of party">
+    <input ng-model="party.size" type="text" class="form-control" id="sizeOfParty" placeholder="Enter size of party">
   </div>
   <!-- <div class="checkbox">
     <label>
@@ -20,3 +20,44 @@
   </div> -->
   <button type="submit" class="btn btn-primary">Add appointment</button>
 </form>
+
+<table class="table table-striped table-bordered table-hover">
+	<thead>
+		<tr class="warning" >
+			<th>Done?</th>
+			<th>Info</th>
+			<th>Notified?</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tr ng-repeat="party in parties" class="info">
+		<td><input type="checkbox" ></td>
+		<td>
+			<div>
+				<strong>{{party.name}} ({{party.size}} people) </strong>
+			</div>
+			<div>
+				{{party.phone}}
+			</div>
+			<div>
+				<!-- TODO: add date created -->
+			</div>
+		</td>
+
+		<td>
+			<div>
+				<!-- TODO: add party.notifed -->
+			</div>
+		</td>
+		<td>
+			<button type="submit" class="btn btn-success">Send SMS</button>
+			<button type="submit" class="btn btn-danger">Remove</button>
+		</td>
+	</tr>
+
+</table>
+
+
+
+
+

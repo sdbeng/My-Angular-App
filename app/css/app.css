@@ -13,6 +13,11 @@ body {
   font-size: 63px;
 }
 
+/*margin added to the bottom of the form*/
+.party-form{
+  margin-bottom:20px ;
+}
+
 
 /*.menu {
   list-style: none;
