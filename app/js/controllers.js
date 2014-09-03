@@ -26,7 +26,7 @@ angular.module('myApp.controllers', [])
  	//Next, we want to have an object in our scope, where it represents the 
  	//data in our form
  	//An object w/3 properties: name, phone and size
- 	$scope.party = {name:'', phone:'', size:''};//test this in the template(change to party var)
+ 	$scope.newParty = {name:'', phone:'', size:''};//test this in the template(change to party var)
 
  	//create function to
  	$scope.saveParty = function() {
@@ -36,9 +36,9 @@ angular.module('myApp.controllers', [])
 
  		//Now, with firebase, we have to "add" instead of "push" data
  		//so we replace push with the $add method that's generated on line17
- 		$scope.parties.$add($scope.party);
+ 		$scope.parties.$add($scope.newParty);
  		//Then reset party to show a blank form fields
- 		$scope.party = {name:'', phone:'', size:''};
+ 		$scope.newParty = {name:'', phone:'', size:''};
  	};
 
  }]);
